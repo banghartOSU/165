@@ -1,0 +1,1 @@
+ssh -t access.engr.oregonstate.edu "cd /nfs/stak/users/banghart/165 ; bash"
