@@ -10,7 +10,10 @@ using namespace std;
 
 int main(){
 	string faveAnimal;
-	cout << "Testing!!"
+	cout << "Please enter your favorite animal." << endl;
+	cin >> faveAnimal;
+	cout << "Your favorite animal is the " << faveAnimal << "." << endl;
 
+	return 0;
 
 }
