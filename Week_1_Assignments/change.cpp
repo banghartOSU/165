@@ -16,7 +16,7 @@ int main(){
 		dimes,
 		nickels,
 		pennies;
-
+		
 	std::cout << "Please enter an amount in cents less than a dollar."<< std::endl;
 	std::cin >> amount;
 
