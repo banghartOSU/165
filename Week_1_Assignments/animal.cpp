@@ -1,18 +1,19 @@
-/********************
-* Thomas Banghart
-* April , 2019
-*********************/
+/******************************************************************************* 
+** Author:       Thomas Banghart
+** Date:         04/01/2019
+** Description:  Asks the user for their favorite animal and then prints out
+**               that that is their favorite animal.
+*******************************************************************************/
 
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 int main(){
-	string faveAnimal;
-	cout << "Please enter your favorite animal." << endl;
-	cin >> faveAnimal;
-	cout << "Your favorite animal is the " << faveAnimal << "." << endl;
+	std::string faveAnimal;
+	std::cout << "Please enter your favorite animal." << std::endl;
+	std::cin >> faveAnimal;
+	std::cout << "Your favorite animal is the " << faveAnimal; 
+	std::cout << "." << std::endl;
 
 	return 0;
 
