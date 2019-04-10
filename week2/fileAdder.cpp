@@ -25,8 +25,7 @@ int main(){
 	std::string fileName;
 	std::ifstream inputFile;
 	
-	//ofstream object to make a file to write out to
-	//string of output file 
+	//Create output file variable and string variable to hold the name of the output file
 	std::ofstream outputFile;
 	std::string outputFileName = "sum.txt";
 
@@ -42,17 +41,15 @@ int main(){
 		while(inputFile >> number){
 			sum += number;
 		}
-	//close the file
-	inputFile.close();
 	
-	//Create ofstream object of the name of "sum.txt"
-	std::ofstream outputFile;
+	//Open the output file
 	outputFile.open(outputFileName);
 
 	//Write sum to the file
 	outputFile << sum;
 
-	//Close the file and let the user know where you saved it.
+	//Close both files and let the user know where you saved it.
+	inputFile.close();
 	outputFile.close();
 	std::cout << "results written to sum.txt" << std::endl;
 	}
