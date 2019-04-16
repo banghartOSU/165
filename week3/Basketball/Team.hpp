@@ -1,3 +1,9 @@
+/************************************************************************************* 
+ * *** Author: Thomas Banghart
+ * *** Date: 04/17/2019
+ * *** Description:  Header file for the Team class. Includes function prototypes.
+ * ***********************************************************************************/
+
 #ifndef TEAM_HPP
 #define TEAM_HPP
 
@@ -15,15 +21,16 @@ private:
 public:
 	//constructor
 	Team(Player, Player, Player, Player, Player);
+	Team();
 
-	//get
+	//getters
 	Player getPointGuard();
 	Player getShootingGuard();
 	Player getSmallForward();
 	Player getPowerForward();
 	Player getCenter();
 
-	//set
+	//setters
 	void setPointGuard(Player);
 	void setShootingGuard(Player);
 	void setSmallForward(Player);

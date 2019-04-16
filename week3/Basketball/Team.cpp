@@ -1,10 +1,21 @@
-// Next write a class called Team that has five data members of type Player: a point guard, a shooting guard, a small forward, a power forward, and a center.  
-// The class should have a constructor that takes five Players and uses them to initialize each of those data members (in the given order).  
-// The class should have get and set methods for each data member.  
-// It should have a method named totalPoints that returns the sum of the points for all players on the team.
+/************************************************************************************* 
+ * Author: Thomas Banghart
+ * Date: 04/10/2019
+ * Description:  Contains the implementation details of the Team class. 
+ * ***********************************************************************************/
 
 #include"Team.hpp"
-//constructor
+//Constructors
+
+//Default constructor which creates new Player objects for each position
+Team::Team(){
+	pointGuard = Player();
+	shootingGuard = Player();
+	smallForward = Player();
+	powerForward = Player();
+	center = Player();
+}
+
 Team::Team(Player pG, Player sG, Player sF, Player pF, Player c){
 	pointGuard = pG;
 	shootingGuard = sG;
@@ -44,7 +55,12 @@ void Team::setCenter(Player c){
 	center = c;
 }
 
+/*******************************************************
+ * FUNCTION: Team::totalPoints
+ * Sums the number of points for each player on a team. 
+ * *****************************************************/
 int Team::totalPoints(){
+	//Get each players points 
     int pgPoints = pointGuard.getPoints();
     int sgPoints = shootingGuard.getPoints();
     int sfPoints = smallForward.getPoints();

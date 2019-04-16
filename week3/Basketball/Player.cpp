@@ -1,14 +1,11 @@
 /********************************************************************************* 
  * Author: Thomas Banghart
- * Date: 04/11/2019
- * Description:  
+ * Date: 04/17/2019
+ * Description: Implementation details for the Player class. 
  *************************************************************************************/
 
 #include"Player.hpp"
 
-
-//The class should have a default constructor that initializes the name to the empty string ("") and initializes each of the stats to 
-//-100 (this is not a valid value for any of the stats, and is one we should notice if it shows up where it shouldn't). 
 Player::Player(){
 	name = "";
 	points = -100;
@@ -16,7 +13,7 @@ Player::Player(){
 	assists = -100;
 }
 
-//It should also have a constructor that takes four parameters and uses them to initialize the data members. 
+//Constructor that sets
 Player::Player(std::string newName, int newPoints, int newRebounds, int newAssists){
 	name = newName;
 	points = newPoints;
@@ -24,7 +21,7 @@ Player::Player(std::string newName, int newPoints, int newRebounds, int newAssis
 	assists = newAssists;
 }
 
-//It should have get methods for each data member.
+//Getters
 std::string Player::getName(){
 	return name;
 }
@@ -38,7 +35,7 @@ int Player::getAssists(){
 	return assists;
 }
 
-//It should have set methods for each of the stats. 
+//Setters
 void Player::setName(std::string newName){
 	name = newName;
 }
@@ -52,7 +49,11 @@ void Player::setAssists(int newAssists){
 	assists = newAssists;
 }
 
-//implementation functions
+/*******************************************************
+ * FUNCTION: Player::hasMorePointsThan
+ * Returns true if the calling player has more points than
+ * the Player passed as an argument and false otherwise.
+ * *****************************************************/
 bool Player::hasMorePointsThan(Player otherPlayer){
 	return points > otherPlayer.getPoints();
 }

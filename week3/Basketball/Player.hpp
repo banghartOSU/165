@@ -1,8 +1,7 @@
 /************************************************************************************* 
  * *** Author: Thomas Banghart
- * *** Date: 04/10/2019
- * *** Description:  Contains the implementation details of the Box class
- * ***               Uses the protoypes in the Box header file included in this class
+ * *** Date: 04/17/2019
+ * *** Description:  Header file for the Player class. Includes function prototypes
  * ***********************************************************************************/
 
 #ifndef PLAYER_HPP
