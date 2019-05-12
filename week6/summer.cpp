@@ -4,7 +4,6 @@
  * Description: summer recursively adds the values of a double array. 
  *****************************/
 
-
 // #include<iostream>
 
 double summer(double arr[], int size){
