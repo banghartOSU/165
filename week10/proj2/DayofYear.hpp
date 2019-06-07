@@ -6,6 +6,7 @@
 #include<sstream>
 #include<cstring>
 #include<limits>
+#include <stdlib.h>
 
 const int MONTH_TIER[] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365};
 const std::string MONTHS[] = {"January", "February", "March", "April","May", "June", "July", "August", "September","October", "November", "December"};
