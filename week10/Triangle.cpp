@@ -1,6 +1,6 @@
 #include"Triangle.hpp"
 #include<math.h>
-//#include<iostream>
+#include<iostream>
 
 //Constructor
 Triangle::Triangle(Point *point1,Point* point2,Point *point3){
@@ -66,7 +66,7 @@ int Triangle::checkTriangle(double e1, double e2, double e3){
 }
 
 
-Testing Main
+//Testing Main
 int main(){
 Point p1;
 Point p2(sqrt(3),1);
