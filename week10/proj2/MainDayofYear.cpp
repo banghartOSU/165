@@ -46,7 +46,7 @@ try{
 		monthIndex = (DayofYear::getMonthIndex(dateString));
 		month = MONTHS[monthIndex];
 
-		additionalDays = std::atol(dateString.substr(dateString.find(" "), std::string::npos).c_str());
+		additionalDays = std::atoi(dateString.substr(dateString.find(" "), std::string::npos).c_str());
 
 		DayofYear::checkDateString(monthIndex, MONTH_TIER[monthIndex], additionalDays);
 
