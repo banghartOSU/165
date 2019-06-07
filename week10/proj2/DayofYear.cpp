@@ -1,5 +1,8 @@
 #include"DayofYear.hpp"
 
+
+
+
 DayofYear::DayofYear(std::string month, int additionalDays){
 	int monthValue = MONTH_TIER[monthIndex];
 	setDayofYear(monthValue + additionalDays);
@@ -25,7 +28,7 @@ std::string DayofYear::getDateString(){
 	std::string month = MONTHS[getMonth(this->dayOfYear)];
 	int numOfDays = getDays(this->dayOfYear);
 
-	std::string strNumofDays = std::to_string(numOfDays);
+	std::string strNumofDays = DayofYear::ToString(numOfDays);
 	return month + " " + strNumofDays;
 
 }
