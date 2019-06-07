@@ -66,23 +66,23 @@ int Triangle::checkTriangle(double e1, double e2, double e3){
 }
 
 
-//Testing Main
-// int main(){
-// Point p1;
-// Point p2(sqrt(3),1);
-// Point p3(0, 2);
+Testing Main
+int main(){
+Point p1;
+Point p2(sqrt(3),1);
+Point p3(0, 2);
 
-// Triangle T1(&p1, &p2, &p3);
-// double e1=T1.edge1();
-// double e2=T1.edge2();
-// double e3=T1.edge3();
+Triangle T1(&p1, &p2, &p3);
+double e1=T1.edge1();
+double e2=T1.edge2();
+double e3=T1.edge3();
 
-// int chkTrinagle = T1.checkTriangle(e1,e2,e3);
+int chkTrinagle = T1.checkTriangle(e1,e2,e3);
 
 
-// std::cout << chkTrinagle << std::endl;
-// 	return 0;
-// }
+std::cout << chkTrinagle << std::endl;
+	return 0;
+}
 
 
 
