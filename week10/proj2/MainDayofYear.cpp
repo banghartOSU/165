@@ -1,4 +1,5 @@
 #include<iostream>
+
 #include"DayofYear.hpp"
 
 int DayofYear::monthIndex = -1;
@@ -45,7 +46,7 @@ try{
 		monthIndex = (DayofYear::getMonthIndex(dateString));
 		month = MONTHS[monthIndex];
 
-		additionalDays = std::stoi(dateString.substr(dateString.find(" "), std::string::npos));
+		additionalDays = std::atoi(dateString.substr(dateString.find(" "), std::string::npos).c_str());
 
 		DayofYear::checkDateString(monthIndex, MONTH_TIER[monthIndex], additionalDays);
 

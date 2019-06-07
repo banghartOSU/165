@@ -1,8 +1,5 @@
 #include"DayofYear.hpp"
 
-
-
-
 DayofYear::DayofYear(std::string month, int additionalDays){
 	int monthValue = MONTH_TIER[monthIndex];
 	setDayofYear(monthValue + additionalDays);
