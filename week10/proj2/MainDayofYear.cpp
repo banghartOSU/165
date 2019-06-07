@@ -48,6 +48,8 @@ try{
 		month = MONTHS[monthIndex];
 
 		additionalDays = atoi(dateString.substr(dateString.find(" "), std::string::npos).c_str());
+		if(!isdigit(additionalDays))
+			throw DayofYear::option2Exception();
 
 		DayofYear::checkDateString(monthIndex, MONTH_TIER[monthIndex], additionalDays);
 
