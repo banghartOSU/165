@@ -1,6 +1,3 @@
-#include<iostream>
-
-
 #include"DayofYear.hpp"
 
 int DayofYear::monthIndex = -1;
