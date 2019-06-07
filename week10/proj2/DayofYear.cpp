@@ -1,7 +1,24 @@
 #include"DayofYear.hpp"
 
+DayofYear::DayofYear(std::string month, int additionalDays){
+	int monthValue = MONTH_TIER[monthIndex];
+	setDayofYear(monthValue + additionalDays);
+}
+
+DayofYear::DayofYear(){
+	setDayofYear(-1);
+}
+
 void DayofYear::setDayofYear(int dayOfYear){
 	this->dayOfYear = dayOfYear;
+}
+
+void DayofYear::setMonthIndex(int index){
+	monthIndex = index;
+}
+
+int DayofYear::getDayofYear() const{
+	return this->dayOfYear;
 }
 
 std::string DayofYear::getDateString(){
@@ -39,83 +56,62 @@ int DayofYear::getDays(int dayOfYear){
 
 int DayofYear::getMonthIndex(std::string dateString){
 	std::string monthToken = dateString.substr(0, dateString.find(" "));
-	int valToReturn = 0;
+	int valToReturn = -1;
 	for(int i = 0; i < NUM_OF_MONTHS; i++){
 		if(MONTHS[i].compare(monthToken) == 0){
 			valToReturn = i;
 		}
-
+	}
+	if(valToReturn == -1){
+		throw option2Exception();
 	}
 
 	return valToReturn;
 }
 
-void DayofYear::option1(){
-	int dayOfYearInput = 0;
-	std::cout << "This program converts a day given by a number 1 through 365 into a month and a day." << std::endl;
-	std::cout << "Enter a number: ";
-	std::cin >> dayOfYearInput;
-		
-	if(dayOfYearInput < 1 || dayOfYearInput > 365){
-		std::cout<< "Invalid range for a day." << std::endl;
-		exit(1);
-	}
-	
-	this->setDayofYear(dayOfYearInput);
-	std::string dateString = this->getDateString();
-	std::cout << dateString << "." << std::endl;
-
-	this->setDayofYear(dayOfYearInput-1);
-	dateString = this->getDateString();
-	std::cout << "The day before is " << dateString << "." << std::endl;
-
-	this->setDayofYear(dayOfYearInput+1);
-	dateString = this->getDateString();
-	std::cout << "The day after is " << dateString << "." <<std::endl;
+void DayofYear::checkDateString(int monthIndex, int monthValue, int additionalDays){
+	int lastDayOfMonth = 0;
+	lastDayOfMonth = MONTH_TIER[monthIndex+1] - MONTH_TIER[monthIndex];
+	if(lastDayOfMonth < additionalDays)
+		throw option2Exception();
 }
 
+DayofYear& DayofYear::operator++(){
+	dayOfYear++;
+	if(dayOfYear > 365)
+		dayOfYear = 1;
 
-
-void DayofYear::option2(){
-	std::string dateString;
-	int monthIndex;
-	int monthValue = 0;
-	int additionalDays = 0;
-	int dayOfYear = 0;
-
-
-	std::cout << "This program converts a month and day of month into a day of the year in the range 1...365." << std::endl;
-	std::cout << "Enter month and day (Example: January 3): "; 
-
-	std::getline(std::cin, dateString);
-	monthIndex = this->getMonthIndex(dateString);
-
-	monthValue = MONTH_TIER[monthIndex];
-	additionalDays = std::stoi(dateString.substr(dateString.find(" "), std::string::npos));
-
-
-
-	// //SHOULD BE A FUNCTION
-	// if(MONTH_TIER[monthIndex] - additionalDays != MONTH_TIER[monthIndex]){
-	// 	std::cout << "Incorrect name or day of month." << std::endl;
-	// 	exit(1);
-	// }
-
-
-	dayOfYear = monthValue + additionalDays;
-	this->setDayofYear(dayOfYear);
-	std::cout << this->dayOfYear <<std::endl;
-
-	this->setDayofYear(dayOfYear-1);
-	dateString = this->getDateString();
-	std::cout << "The day before is " << dateString << "." << std::endl;
-
-	this->setDayofYear(dayOfYear+1);
-	dateString = this->getDateString();
-	std::cout << "The day after is " << dateString << "." <<std::endl;
-
+	return *this;
+}
+DayofYear DayofYear::operator++(int){
+	DayofYear temp = *this;
+	dayOfYear++;
+	if(dayOfYear > 365)
+		dayOfYear = 1;
+	return temp;
 }
 
+DayofYear& DayofYear::operator--(){
+	dayOfYear--;
+	if(dayOfYear <= 0)
+		dayOfYear = 365;
+	return *this;
+}
+DayofYear DayofYear::operator--(int){
+	DayofYear temp = *this;
+	dayOfYear--;
+	if(dayOfYear <= 0)
+		dayOfYear = 365;
+	return temp;
+}
+
+void DayofYear::printBeforeAfter(){
+	dayOfYear--;
+	std::cout << "The day before is " << this->getDateString() << "." << std::endl;
+	dayOfYear++;
+	dayOfYear++;
+	std::cout << "The day after is " << this->getDateString() << "." <<std::endl;
+}
 
 
 

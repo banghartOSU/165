@@ -11,19 +11,34 @@ const int NUM_OF_MONTHS = 12;
 class DayofYear{
 private:
 	int dayOfYear;
+	static int monthIndex;
 
 public:
+	DayofYear();
+	DayofYear(std::string, int);
 	void setDayofYear(int dayOfYear);
+	int getDayofYear() const;
+
+	void printBeforeAfter();
 
 	//Option 1 member functions:
 	void option1();
 	std::string getDateString();
 	int getMonth(int dayOfYear);
 	int getDays(int dayOfYear);
+	class option1Exception { };
 
 	//Option 2 member functions:
-	void option2();
-	int getMonthIndex(std::string);
+	static int getMonthIndex(std::string);
+	static void setMonthIndex(int);
+	static void checkDateString(int,int,int);
+	class option2Exception { };
+
+	DayofYear& operator++(); 
+	DayofYear operator++(int);
+
+	DayofYear& operator--();
+	DayofYear operator--(int);
 
 };
 
