@@ -1,10 +1,8 @@
 #include"DayofYear.hpp"
 
-int DayofYear::monthIndex = -1;
-
 int main(){
 	int optionNum = 0;
-	std::cout << "Please choose an option (1 or 2):" << std::endl;
+	std::cout << "Please choose an option (1 or 2): " << std::endl;
 	std::cin >> optionNum;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 
@@ -45,13 +43,14 @@ try{
 		month = MONTHS[monthIndex];
 
 		additionalDays = atoi(dateString.substr(dateString.find(" "), std::string::npos).c_str());
+		if(additionalDays < 0)
+			throw DayofYear::option2Exception();
 
 		DayofYear::checkDateString(monthIndex, MONTH_TIER[monthIndex], additionalDays);
 
-		DayofYear::setMonthIndex(monthIndex);
-
 		DayofYear doy(month, additionalDays);
-		std::cout << doy.getDayofYear() << std::endl;
+
+		std::cout <<"It is day " << doy.getDayofYear() << "." << std::endl;
 
 		doy.printBeforeAfter();
 

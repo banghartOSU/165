@@ -1,7 +1,12 @@
 #include"DayofYear.hpp"
 
 DayofYear::DayofYear(std::string month, int additionalDays){
-	int monthValue = MONTH_TIER[monthIndex];
+	int monthValue = 0;
+	for(int i = 0; i < NUM_OF_MONTHS; i++){
+		if(MONTHS[i].compare(month) == 0){
+			monthValue = MONTH_TIER[i];
+		}
+	}
 	setDayofYear(monthValue + additionalDays);
 }
 
@@ -11,10 +16,6 @@ DayofYear::DayofYear(){
 
 void DayofYear::setDayofYear(int dayOfYear){
 	this->dayOfYear = dayOfYear;
-}
-
-void DayofYear::setMonthIndex(int index){
-	monthIndex = index;
 }
 
 int DayofYear::getDayofYear() const{

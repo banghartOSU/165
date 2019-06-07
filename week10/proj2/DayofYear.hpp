@@ -17,35 +17,39 @@ const int NUM_OF_MONTHS = 12;
 class DayofYear{
 private:
 	int dayOfYear;
-	static int monthIndex;
 
 public:
 	DayofYear();
 	DayofYear(std::string, int);
-	void setDayofYear(int dayOfYear);
-	int getDayofYear() const;
 	void printBeforeAfter();
 
+
+	void setDayofYear(int dayOfYear);
+	int getDayofYear() const;
+	
+
 	//Option 1 member functions:
-	void option1();
 	std::string getDateString();
+	void option1();
 	int getMonth(int dayOfYear);
 	int getDays(int dayOfYear);
 	class option1Exception { };
 
 	//Option 2 member functions:
 	static int getMonthIndex(std::string);
-	static void setMonthIndex(int);
 	static void checkDateString(int,int,int);
 	class option2Exception { };
 
+	//Overloaded ++ operators
 	DayofYear& operator++(); 
 	DayofYear operator++(int);
 
+	//Overloaded -- operators
 	DayofYear& operator--();
 	DayofYear operator--(int);
 
-
+	//Template to string function since to_string() 
+	//failed test cases using the compiler on Mimir
 	template <typename T>
 	std::string ToString(T val){
     	std::stringstream stream;
