@@ -1,7 +1,7 @@
 /********************************************************************************* 
  * Author: Thomas Banghart
- * Date: 04/11/2019
- * Description:  
+ * Date: 04/17/2019
+ * Description: Header file for the Taxicab class
  *************************************************************************************/
 class Taxicab{
 
@@ -15,12 +15,12 @@ public:
 	Taxicab();
 	Taxicab(int newXCoord, int newYCoord);
 
-	//getters 
+	//Getters 
 	int getXCoord();
 	int getYCoord();
 	int getDistanceTraveled();
 
-	//implementation
+	//Implementation
 	void moveX(int);
 	void moveY(int);
 

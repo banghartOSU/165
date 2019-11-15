@@ -17,18 +17,20 @@ int main(){
 	//Get the total number of integers that will be entered
 	std::cout << "How many integers would you like to enter?" << std::endl;
 	std::cin >> numOfIntegers;
-
-	//Prompt user to enter the integers
-	std::cout << "Please enter " << numOfIntegers << " integers" << std::endl;
+	if(numOfIntegers > 1){
+		//Prompt user to enter the integers
+		std::cout << "Please enter " << numOfIntegers << " integers:" << std::endl;
 	
-	//Set the first number as both the minmum and maximum
+	}else{
+		std::cout << "Please enter an integer." <<std::endl;
+		}
+	
 	std::cin >> min;
 	max = min;
-
 	//for loop that compares the remaining integers to be entered to the min and max values
 	for(int i = 1; i < numOfIntegers; i++){
 		std::cin >> input;
-		
+			
 		if(input <= min){
 			min = input;
 		}
@@ -36,10 +38,9 @@ int main(){
 			max = input;
 		}
 	}
-
 	std::cout << "min: "<< min << std::endl;
 	std::cout <<"max: "<< max << std::endl;
-	std::cout << "max-min: "<< "("<< max << ")-(" << min << ")= " << max-min << std::endl;
+	std::cout << "max-min: "<< "("<< max << ")-(" << min << ")= " << max-min;
 
 	return 0;
 }

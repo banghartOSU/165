@@ -1,3 +1,9 @@
+/*****************************
+ * Author: Thomas Banghart
+ * Date: 06/06/2019
+ * Description: This is the implementation file for the 
+ * Point class
+ *****************************/
 #include"Point.hpp"
 #include<math.h>
 

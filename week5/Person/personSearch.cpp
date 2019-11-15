@@ -1,6 +1,6 @@
 /*****************************
  * Author: Thomas Banghart
- * Date: 04/18/2019
+ * Date: 04/28/2019
  * Description: personSearch takes a sorted vector of Person objects and a name and uses a binary search 
  * to return the index of the Person object with that same name. 
  * If no match is found, it returns -1.

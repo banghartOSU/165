@@ -1,3 +1,8 @@
+/*****************************************************
+ * Author: Thomas Banghart
+ * Date: 06/06/2019
+ * Description: This is the implementation file for the Triangle class
+ *****************************************************/
 #include"Triangle.hpp"
 #include<math.h>
 #include<iostream>
@@ -41,13 +46,21 @@ double Triangle::edge2(){
 double Triangle::edge3(){
 	return vert3->SqrDistanceTo(*vert1);
 }
-
+/*****************************************************
+* checkTriangle() takes three squared lengths of edges 
+* and determines the type of the triangle:
+* It will return 1 if the triangle is equilateral.
+* It will return 2 if the triangle is isosceles.
+* It will return 3 if the triangle is right-angled.
+* It will return 4 if the triangle is both isosceles and right-angled.
+* It will return 0 if the triangle is scalene but not right-angled.
+*****************************************************/
 int Triangle::checkTriangle(double e1, double e2, double e3){	
 	int triangleType = 0;
+
+	//Equilateral
 	double epsilon = 0.00000001;
-	if(fabs(e1-e2) < epsilon 
-		&& fabs(e2-e3) < epsilon 
-		&& fabs(e1-e3) < epsilon){		
+	if(fabs(e1-e2) < epsilon && fabs(e2-e3) < epsilon && fabs(e1-e3) < epsilon){		
 			return 1;	
 	}
 	//Isosceles 
@@ -66,23 +79,23 @@ int Triangle::checkTriangle(double e1, double e2, double e3){
 }
 
 
-//Testing Main
-int main(){
-Point p1;
-Point p2(sqrt(3),1);
-Point p3(0, 2);
+// //Testing Main
+// int main(){
+// Point p1;
+// Point p2(sqrt(3),1);
+// Point p3(0, 2);
 
-Triangle T1(&p1, &p2, &p3);
-double e1=T1.edge1();
-double e2=T1.edge2();
-double e3=T1.edge3();
+// Triangle T1(&p1, &p2, &p3);
+// double e1=T1.edge1();
+// double e2=T1.edge2();
+// double e3=T1.edge3();
 
-int chkTrinagle = T1.checkTriangle(e1,e2,e3);
+// int chkTrinagle = T1.checkTriangle(e1,e2,e3);
 
 
-std::cout << chkTrinagle << std::endl;
-	return 0;
-}
+// std::cout << chkTrinagle << std::endl;
+// 	return 0;
+// }
 
 
 

@@ -1,7 +1,13 @@
+/********************************************************************************* 
+ * Author: Thomas Banghart
+ * Date: 04/17/2019
+ * Description: Header for Person class
+ *************************************************************************************/
+#include<string>
+
 #ifndef PERSON_HPP
 #define PERSON_HPP
 
-#include<string>
 
 class Person{
 

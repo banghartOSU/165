@@ -6,7 +6,7 @@
  * now has the lowest value, the second parameter the middle value, 
  * and the third parameter has the highest value. 
  *****************************/
-#include<iostream>
+// #include<iostream>
 
 void smallSort2(int* first, int* second, int* third){
 	int temp;
@@ -31,14 +31,14 @@ void smallSort2(int* first, int* second, int* third){
 
 }
 
-int main(){
-	int first,
-		second,
-		third;
-	first = 14;
-	second = -90;
-	third = 2;
+// int main(){
+// 	int first,
+// 		second,
+// 		third;
+// 	first = 14;
+// 	second = -90;
+// 	third = 2;
 
-	smallSort2(&first, &second, &third);
-	std::cout << first << ", " << second << ", " << third << std::endl;
-}
+// 	smallSort2(&first, &second, &third);
+// 	std::cout << first << ", " << second << ", " << third << std::endl;
+// }

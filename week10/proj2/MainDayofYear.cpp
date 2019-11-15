@@ -1,14 +1,23 @@
+/*****************************
+ * Author: Thomas Banghart
+ * Date: 05/29/2019
+ * Description: This is the implementation file for the 
+ * postfixEval class
+ *****************************/
 #include"DayofYear.hpp"
 
 int main(){
 	int optionNum = 0;
 	std::cout << "Please choose an option (1 or 2): " << std::endl;
 	std::cin >> optionNum;
+	//Take user input for option and clear the buffer.
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 
 try{
 	if(optionNum == 1){
+		//int variable for user input
 		int dayOfYearInput = 0;
+		//Declare object to use
 		DayofYear doy;
 
 		std::cout << "This program converts a day given by a number 1 through 365 into a month and a day." << std::endl;
@@ -27,6 +36,7 @@ try{
 		doy.printBeforeAfter();
 
 	}else if(optionNum == 2){
+		//var for user input
 		std::string dateString;
 		std::string month;
 		int monthIndex = 0;
@@ -43,7 +53,7 @@ try{
 		month = MONTHS[monthIndex];
 
 		additionalDays = atoi(dateString.substr(dateString.find(" "), std::string::npos).c_str());
-		if(additionalDays < 0)
+		if(additionalDays <= 0 || additionalDays > 31)
 			throw DayofYear::option2Exception();
 
 		DayofYear::checkDateString(monthIndex, MONTH_TIER[monthIndex], additionalDays);

@@ -1,0 +1,13 @@
+int main(){
+
+	int x = 1;
+
+	switch(x){
+		case 1: std::cout << "The ";
+		case 2: std::cout << "cake ";
+			break;
+		case 3: std::cout << "is a ";
+			break;
+		default: std::cout << "lie";
+	}
+}

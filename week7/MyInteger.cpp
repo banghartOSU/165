@@ -43,7 +43,8 @@ MyInteger& MyInteger::operator=(const MyInteger &right){
 	if(this != &right){
 		delete pInteger;
 		pInteger = new int(right.getMyInt());	
+		
 	}
 	return *this;
-
+	
 }

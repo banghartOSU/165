@@ -1,7 +1,7 @@
 /********************************************************************************* 
  * Author: Thomas Banghart
  * Date: 04/11/2019
- * Description:  
+ * Description: main testing file for the Taxicab class 
  *************************************************************************************/
 
 #include"Taxicab.hpp"

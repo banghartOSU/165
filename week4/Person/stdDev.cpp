@@ -1,20 +1,21 @@
 /*****************************
  * Author: Thomas Banghart
  * Date: 04/24/2019
- * Description: 
+ * Description: Takes an array of Person objects and calculates the 
+ * standard deviation of their ages.
  *****************************/
 
-
 #include"Person.hpp"
-#include<iostream>
 #include<cmath>
+// #include<iostream>
+
 
 double stdDev(Person arr[], int size){
 	//Declare doubles for mean, sum, the deviation, and variance of the sample
-	double mean,
-		   sum,
-		   sumDevSquared,
-		   variance;
+	double mean = 0.0;
+	double sum = 0.0;
+	double sumDevSquared = 0.0;
+	double variance = 0.0;
 
 	//For loop to calculate the sum of all ages 
 	for(int i = 0; i < size; i++){
@@ -41,18 +42,18 @@ double stdDev(Person arr[], int size){
 	return sqrt(variance);
 }
 
-int main(){
-	Person p1("TJ", 26);
-	Person p2("Olivia", 24);
-	Person p3("Rose", 1000);
+// int main(){
+// 	const double EPS = 0.00001;
 
-	Person people[3] = {p1, p2, p3};
+// 	Person a("alice", 92);
+// 	Person b("bernice", 77);
+// 	Person array[] = {a,b};
+// 	double result = stdDev(array, 2);
 
-	std::cout << people[0].getName() << std::endl;
-	std::cout << people[1].getName() << std::endl;
-	std::cout << people[2].getName() << std::endl;
 
-	std::cout << "Standard deviation: " << stdDev(people, 3) << std::endl;
+// 	std::cout << ((fabs(result-7.5) < EPS)) << std::endl;
 
-	return 0;
-}
+
+
+// 	return 0;
+// }

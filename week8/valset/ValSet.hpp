@@ -150,7 +150,7 @@ void ValSet<T>::remove(T elementToRemove){
 	if(this->contains(elementToRemove) && !this->isEmpty()){
 		int position = 0;
 		for (int i = 0; i < this->size(); i++){
-			if(arrayPointer[i]==elementToRemove)
+			if(arrayPointer[i] == elementToRemove)
 				position = i;
 		}
 		for (int i = position; i < this->size()-1; i++)

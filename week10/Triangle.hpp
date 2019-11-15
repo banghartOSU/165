@@ -1,3 +1,9 @@
+/*****************************
+ * Author: Thomas Banghart
+ * Date: 05/29/2019
+ * Description: This is the header file for the 
+ * Triangle class
+ *****************************/
 #ifndef TRIANGLE_HPP
 #define TRIANGLE_HPP
 

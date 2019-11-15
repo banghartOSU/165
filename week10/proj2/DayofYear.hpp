@@ -1,3 +1,9 @@
+/*****************************
+ * Author: Thomas Banghart
+ * Date: 06/06/2019
+ * Description: This is the header file for the 
+ * DayofYear class.
+ *****************************/
 #ifndef DAYOFYEAR_HPP
 #define DAYOFYEAR_HPP
 
@@ -48,19 +54,14 @@ public:
 	DayofYear& operator--();
 	DayofYear operator--(int);
 
-	//Template to string function since to_string() 
-	//failed test cases using the compiler on Mimir
+	//Template ToString function since to_string() 
+	//failed test cases using the compiler on flip/Mimir
 	template <typename T>
 	std::string ToString(T val){
     	std::stringstream stream;
     	stream << val;
     	return stream.str();
 	}
-
-
-
-
-
 };
 
 #endif

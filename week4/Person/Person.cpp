@@ -1,16 +1,17 @@
 /*****************************
  * Author: Thomas Banghart
  * Date: 04/24/2019
- * Description: 
+ * Description: Implementation file for the Person class
  *****************************/
 #include"Person.hpp"
+#include<string>
 
 // #include<iostream>
 
 //Constructors
 Person::Person(){
-	name = "John Doe";
-	age = 45;
+	name = "";
+	age = 0.0;
 
 }
 Person::Person(std::string newName, double newAge){

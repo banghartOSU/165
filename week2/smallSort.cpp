@@ -29,20 +29,24 @@ int main(){
 }
 
 void smallSort(int &first, int &second, int &third){
+	//temp to hold value of number we'd like to switch
 	int temp;
 
+	//switch third with first if third is larger
 	if(first < third){
 		temp = third;
 		third = first;
 		first = temp;
 	}
 
+	//check to see if the second is larger than first
 	if(first < second){
 		temp = first;
 		first = second;
 		second = temp;
 	}
 
+	//finally, see if the second and third are ordered correctly
 	if(second < third){
 		temp = second;
 		second = third;

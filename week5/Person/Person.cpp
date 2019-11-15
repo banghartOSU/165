@@ -7,12 +7,10 @@
 #include<string>
 
 // #include<iostream>
-
 //Constructors
 Person::Person(){
 	name = "";
 	age = 0.0;
-
 }
 Person::Person(std::string newName, double newAge){
 	name = newName;
